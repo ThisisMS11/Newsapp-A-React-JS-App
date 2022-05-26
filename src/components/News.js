@@ -9,6 +9,10 @@ const News = (props) => {
     const [loading, setloading] = useState(false)
     const [page, setpage] = useState(1);
     const [totalresults, settotalresults] = useState(0)
+    
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`
 
@@ -55,14 +59,11 @@ const News = (props) => {
     }
 
     const handlenextclick = async () => {
-
         setpage(page + 1);
         updatenews();
     }
 
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+   
 
     return (
         <>
@@ -85,13 +86,6 @@ const News = (props) => {
                             <Newsitem title={e.title ? e.title.slice(0, 40) : ""} description={e.description ? e.description.slice(0, 88) + '...' : ""} imageurl={!e.urlToImage ? 'https://images.unsplash.com/5/unsplash-kitsune-4.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc01c83c3da0425e9baa6c7a9204af81' : e.urlToImage} newsurl={e.url}
                                 author={e.author ? e.author : 'Unknown'} date={e.publishedAt} source={e.source.name} color={props.color} />
 
-                            {/* understand how color is sent here
-                                1. we know the category news is shown with the help of react router.
-                                2. so we sent color prop in app.js to news.js where our respective category articles were getting iterated.
-                                3. we used props.color to gain the respective category color to highlight.
-                                */}
-
-                            {/* if author is null then that condition would be considered to be false otherwise true */}
                         </div>
 
                     })}
