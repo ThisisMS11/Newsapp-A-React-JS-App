@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
 import LoadingBar from 'react-top-loading-bar'
@@ -24,7 +24,6 @@ const App = (props) => {
 
 
   return (
-
     <div>
       <BrowserRouter>
 
@@ -59,7 +58,7 @@ const App = (props) => {
 
       </BrowserRouter>
 
-      {/* when i am navigating our news component is not getting remounted  i want to remount the newscomponent with updated props for different categories because react will think like if the component is already there and what is the need to update it more i.e. it is being lazy to resolve that issue we have to use key with each route element */}
+      {/* when i am navigating our news component is not getting remounted  i want to remount the newscomponent with updated props for different categories because react will think like if the component is already there and what is the need to update it more i.e. it is being lazy .To resolve that issue we have to use key with each route element */}
     </div>
   )
 

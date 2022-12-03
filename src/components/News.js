@@ -14,7 +14,7 @@ const News = (props) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`
+   
 
 
     // now creating an update function to concise our code
@@ -41,6 +41,7 @@ const News = (props) => {
     }
 
     useEffect(() => {
+        document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`
         updatenews()
     }, [])
 
