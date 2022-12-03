@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import loading from './Spinner.gif'
-export default class SpinnerComponent extends Component {
-    render() {
-
-        const stylesgif={
-            position: 'absolute',
-            top:'50vh',
-            left:'44vw'
-        }
-        return (
-            <div style={stylesgif}>
-                <img src={loading} alt="loading..." />
-            </div>
-        )
+const SpinnerComponent = (props) => {
+    const stylesgif = {
+        position: 'absolute',
+        top: '50vh',
+        left: '44vw'
     }
+    return (
+        <div style={stylesgif}>
+            {/* loading is the name of gif */}
+            <img src={loading} alt="loading..." />
+        </div>
+    )
 }
+export default SpinnerComponent
